@@ -11,8 +11,11 @@ import {
   ArrowRight,
   BookOpen,
   Grid3x3,
-  AlarmClock,
-  Search,
+  HeartPulse,
+  BotMessageSquare,
+  Activity,
+  Eye,
+  Bell,
 } from 'lucide-react';
 
 const features = [
@@ -20,7 +23,7 @@ const features = [
     title: 'Symptom Checker',
     description: 'Enter your symptoms to get an AI-powered analysis.',
     href: '/symptom-checker',
-    icon: <Search className="h-8 w-8 text-primary" />,
+    icon: <BotMessageSquare className="h-8 w-8 text-primary" />,
   },
   {
     title: 'Amsler Grid Test',
@@ -32,11 +35,17 @@ const features = [
     title: 'Medication Reminders',
     description: 'Set reminders for your eye drops and medications.',
     href: '/reminders',
-    icon: <AlarmClock className="h-8 w-8 text-primary" />,
+    icon: <Bell className="h-8 w-8 text-primary" />,
   },
   {
-    title: 'Care & Condition Guides',
-    description: 'Explore articles, exercises, and condition information.',
+    title: 'Eye Exercises',
+    description: 'Relieve eye strain with guided exercises.',
+    href: '/exercises',
+    icon: <Eye className="h-8 w-8 text-primary" />,
+  },
+  {
+    title: 'Health Articles',
+    description: 'Explore articles on eye care and conditions.',
     href: '/articles',
     icon: <BookOpen className="h-8 w-8 text-primary" />,
   },
@@ -45,13 +54,13 @@ const features = [
 export default function DashboardPage() {
   return (
     <div className="flex flex-col gap-8 p-4 md:p-8">
-      <div>
+      <div className="space-y-1.5">
         <h1 className="text-3xl font-bold tracking-tight">Welcome to Visionary</h1>
         <p className="text-muted-foreground">Your personal guide to eye health and care.</p>
       </div>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-1">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {features.map((feature) => (
-          <Card key={feature.title} className="flex flex-col justify-between transition-all hover:shadow-md">
+          <Card key={feature.title} className="flex flex-col justify-between transition-all hover:shadow-lg hover:-translate-y-1">
             <CardHeader>
               <div className="flex items-start gap-4">
                 {feature.icon}
@@ -62,10 +71,10 @@ export default function DashboardPage() {
               </div>
             </CardHeader>
             <CardContent>
-              <Button asChild variant="ghost" className="w-full justify-start">
+              <Button asChild variant="secondary" className="w-full justify-start group">
                 <Link href={feature.href}>
                   Go to {feature.title}
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-auto h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
             </CardContent>

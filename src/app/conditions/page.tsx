@@ -4,7 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Activity } from 'lucide-react';
+import { HeartPulse } from 'lucide-react';
 
 const conditions = [
   {
@@ -29,7 +29,7 @@ export default function ConditionsPage() {
   return (
     <div className="p-4 md:p-8">
       <div className="mb-8 flex items-center gap-4">
-        <Activity className="h-8 w-8 text-primary" />
+        <HeartPulse className="h-8 w-8 text-primary" />
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Common Eye Conditions</h1>
           <p className="text-muted-foreground">

@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter }
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Loader2, Search, AlertTriangle } from 'lucide-react';
+import { Loader2, BotMessageSquare, AlertTriangle, Sparkles } from 'lucide-react';
 import { checkSymptoms } from '@/ai/flows/symptom-checker-flow';
 import type { SymptomCheckerOutput } from '@/ai/flows/symptom-checker-schemas';
 
@@ -34,11 +34,11 @@ export default function SymptomCheckerPage() {
   return (
     <div className="p-4 md:p-8">
       <div className="mb-8 flex items-center gap-4">
-        <Search className="h-8 w-8 text-primary" />
+        <BotMessageSquare className="h-8 w-8 text-primary" />
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Symptom Checker</h1>
+          <h1 className="text-3xl font-bold tracking-tight">AI Symptom Checker</h1>
           <p className="text-muted-foreground">
-            Enter your symptoms for an AI-powered analysis.
+            Enter your symptoms for an AI-powered analysis using Google Search.
           </p>
         </div>
       </div>
@@ -73,7 +73,7 @@ export default function SymptomCheckerPage() {
                 </>
               ) : (
                 <>
-                  <Search className="mr-2 h-4 w-4" />
+                  <Sparkles className="mr-2 h-4 w-4" />
                   Check Symptoms
                 </>
               )}

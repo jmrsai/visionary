@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { AlarmClock, PlusCircle, Trash2, BellRing } from "lucide-react";
+import { Bell, PlusCircle, Trash2, BellRing } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 type Reminder = {
@@ -46,7 +46,7 @@ export default function RemindersPage() {
       dosage: formData.get("dosage") as string,
       time: formData.get("time") as string,
     };
-    setReminders([...reminders, newReminder]);
+    setReminders([...reminders, newReminder].sort((a, b) => a.time.localeCompare(b.time)));
     setOpen(false);
     toast({
       title: "Reminder Added",
@@ -67,7 +67,7 @@ export default function RemindersPage() {
     <div className="p-4 md:p-8">
       <div className="mb-8 flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <AlarmClock className="h-8 w-8 text-primary" />
+          <Bell className="h-8 w-8 text-primary" />
           <div>
             <h1 className="text-3xl font-bold tracking-tight">Medication Reminders</h1>
             <p className="text-muted-foreground">
@@ -121,7 +121,7 @@ export default function RemindersPage() {
       ) : (
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {reminders.map((reminder) => (
-            <Card key={reminder.id}>
+            <Card key={reminder.id} className="transition-all hover:shadow-md">
               <CardHeader>
                 <CardTitle>{reminder.name}</CardTitle>
                 <CardDescription>{reminder.dosage}</CardDescription>
