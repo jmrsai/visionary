@@ -3,31 +3,19 @@
  * @fileOverview A symptom checker AI agent.
  *
  * - checkSymptoms - A function that handles the symptom checking process.
- * - SymptomCheckerInput - The input type for the checkSymptoms function.
- * - SymptomCheckerOutput - The return type for the checkSymptoms function.
  */
 
 import {ai} from '@/ai/genkit';
 import {googleAI} from '@genkit-ai/googleai';
-import {z} from 'genkit';
+import type {SymptomCheckerInput, SymptomCheckerOutput} from './symptom-checker-schemas';
+import {
+  SymptomCheckerInputSchema,
+  SymptomCheckerOutputSchema,
+} from './symptom-checker-schemas';
 
-export const SymptomCheckerInputSchema = z.object({
-  symptoms: z.string().describe('A description of the symptoms.'),
+const symptomCheckerTool = googleAI.model('gemini-1.5-flash-latest', {
+  tools: [googleAI.googleSearch],
 });
-export type SymptomCheckerInput = z.infer<typeof SymptomCheckerInputSchema>;
-
-export const SymptomCheckerOutputSchema = z.object({
-  possibleConditions: z.array(z.string()).describe('A list of possible conditions based on the symptoms.'),
-  analysis: z.string().describe('A detailed analysis of the symptoms and possible conditions.'),
-  disclaimer: z.string().describe('A disclaimer that this is not a medical diagnosis.'),
-});
-export type SymptomCheckerOutput = z.infer<typeof SymptomCheckerOutputSchema>;
-
-const symptomCheckerTool = googleAI.model('gemini-1.5-flash-latest', {tools: [googleAI.googleSearch]});
-
-export async function checkSymptoms(input: SymptomCheckerInput): Promise<SymptomCheckerOutput> {
-  return symptomCheckerFlow(input);
-}
 
 const prompt = ai.definePrompt({
   name: 'symptomCheckerPrompt',
@@ -58,3 +46,9 @@ const symptomCheckerFlow = ai.defineFlow(
     return output!;
   }
 );
+
+export async function checkSymptoms(
+  input: SymptomCheckerInput
+): Promise<SymptomCheckerOutput> {
+  return symptomCheckerFlow(input);
+}

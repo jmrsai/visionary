@@ -7,7 +7,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Loader2, Search, AlertTriangle } from 'lucide-react';
-import { checkSymptoms, SymptomCheckerOutput } from '@/ai/flows/symptom-checker-flow';
+import { checkSymptoms } from '@/ai/flows/symptom-checker-flow';
+import type { SymptomCheckerOutput } from '@/ai/flows/symptom-checker-schemas';
 
 export default function SymptomCheckerPage() {
   const [symptoms, setSymptoms] = useState('');
