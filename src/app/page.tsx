@@ -20,12 +20,6 @@ import {
 
 const features = [
   {
-    title: 'Symptom Checker',
-    description: 'Enter your symptoms to get an AI-powered analysis.',
-    href: '/symptom-checker',
-    icon: <BotMessageSquare className="h-8 w-8 text-primary" />,
-  },
-  {
     title: 'Amsler Grid Test',
     description: 'Monitor your vision for signs of retinal diseases.',
     href: '/amsler-grid',
@@ -49,6 +43,12 @@ const features = [
     href: '/articles',
     icon: <BookOpen className="h-8 w-8 text-primary" />,
   },
+  {
+    title: 'Common Eye Conditions',
+    description: 'Learn about various eye conditions.',
+    href: '/conditions',
+    icon: <HeartPulse className="h-8 w-8 text-primary" />,
+  }
 ];
 
 export default function DashboardPage() {

@@ -15,12 +15,10 @@ import {
   Eye,
   HeartPulse,
   FileText,
-  BotMessageSquare
 } from "lucide-react";
 
 const menuItems = [
   { href: "/", label: "Dashboard", icon: LayoutDashboard },
-  { href: "/symptom-checker", label: "Symptom Checker", icon: BotMessageSquare },
   { href: "/reminders", label: "Reminders", icon: Bell },
   { href: "/exercises", label: "Exercises", icon: Eye },
 ];
