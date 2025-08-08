@@ -16,6 +16,7 @@ import {
   Activity,
   Eye,
   Bell,
+  Search,
 } from 'lucide-react';
 
 const features = [
@@ -36,6 +37,12 @@ const features = [
     description: 'Relieve eye strain with guided exercises.',
     href: '/exercises',
     icon: <Eye className="h-8 w-8 text-primary" />,
+  },
+    {
+    title: 'Symptom Checker',
+    description: 'Get guided search results from trusted sources.',
+    href: '/symptom-checker',
+    icon: <Search className="h-8 w-8 text-primary" />,
   },
   {
     title: 'Health Articles',

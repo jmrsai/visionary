@@ -15,6 +15,7 @@ import {
   Eye,
   HeartPulse,
   FileText,
+  Search,
 } from "lucide-react";
 
 const menuItems = [
@@ -30,6 +31,7 @@ const learnItems = [
 
 const testItems = [
     { href: "/amsler-grid", label: "Amsler Grid", icon: Grid3x3 },
+    { href: "/symptom-checker", label: "Symptom Checker", icon: Search },
 ]
 
 export function Nav() {
