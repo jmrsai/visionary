@@ -12,9 +12,16 @@ import {
   BookOpen,
   Grid3x3,
   AlarmClock,
+  Search,
 } from 'lucide-react';
 
 const features = [
+  {
+    title: 'Symptom Checker',
+    description: 'Enter your symptoms to get an AI-powered analysis.',
+    href: '/symptom-checker',
+    icon: <Search className="h-8 w-8 text-primary" />,
+  },
   {
     title: 'Amsler Grid Test',
     description: 'Monitor your vision for signs of retinal diseases.',

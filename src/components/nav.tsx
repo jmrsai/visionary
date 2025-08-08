@@ -14,11 +14,13 @@ import {
   AlarmClock,
   Eye,
   Activity,
-  FileText
+  FileText,
+  Search
 } from "lucide-react";
 
 const menuItems = [
   { href: "/", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/symptom-checker", label: "Symptom Checker", icon: Search },
   { href: "/amsler-grid", label: "Amsler Grid", icon: Grid3x3 },
   { href: "/reminders", label: "Reminders", icon: AlarmClock },
   { href: "/articles", label: "Articles", icon: FileText },
