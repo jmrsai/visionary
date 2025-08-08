@@ -7,12 +7,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter }
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Search, ExternalLink } from "lucide-react";
-import Image from 'next/image';
 import Link from 'next/link';
 
 type SearchProvider = {
   name: string;
-  logo: string;
   url: string;
 };
 
@@ -30,22 +28,18 @@ export default function SymptomCheckerPage() {
     const providers: SearchProvider[] = [
       {
         name: 'Google',
-        logo: '/google-logo.svg', // Assuming you'll add these logos to /public
         url: `https://www.google.com/search?q=eye+symptoms+${encodedSymptoms}`,
       },
       {
         name: 'PubMed',
-        logo: '/pubmed-logo.svg',
         url: `https://pubmed.ncbi.nlm.nih.gov/?term=eye+${encodedSymptoms}`,
       },
       {
         name: 'CDC',
-        logo: '/cdc-logo.svg',
         url: `https://www.cdc.gov/search/?query=${encodedSymptoms}`,
       },
       {
         name: 'WHO',
-        logo: '/who-logo.svg',
         url: `https://www.who.int/search?query=${encodedSymptoms}`,
       },
     ];
@@ -104,7 +98,6 @@ export default function SymptomCheckerPage() {
                     <Card key={provider.name}>
                         <CardHeader>
                             <CardTitle className="flex items-center gap-2">
-                                {/* Using a placeholder for now, you should add actual logos */}
                                 <div className="w-6 h-6 bg-muted rounded-full flex items-center justify-center">
                                     <Search className="w-4 h-4 text-muted-foreground" />
                                 </div>
