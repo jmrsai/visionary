@@ -10,10 +10,8 @@ import {
 } from "@/components/ui/sidebar";
 import {
   LayoutDashboard,
-  HeartPulse,
   Grid3x3,
   AlarmClock,
-  BookOpen,
   Eye,
   Activity,
   FileText
@@ -21,7 +19,6 @@ import {
 
 const menuItems = [
   { href: "/", label: "Dashboard", icon: LayoutDashboard },
-  { href: "/symptom-checker", label: "Symptom Checker", icon: HeartPulse },
   { href: "/amsler-grid", label: "Amsler Grid", icon: Grid3x3 },
   { href: "/reminders", label: "Reminders", icon: AlarmClock },
   { href: "/articles", label: "Articles", icon: FileText },

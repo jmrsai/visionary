@@ -11,17 +11,10 @@ import {
   ArrowRight,
   BookOpen,
   Grid3x3,
-  HeartPulse,
   AlarmClock,
 } from 'lucide-react';
 
 const features = [
-  {
-    title: 'Symptom Checker',
-    description: 'Get AI-powered insights into your eye symptoms.',
-    href: '/symptom-checker',
-    icon: <HeartPulse className="h-8 w-8 text-primary" />,
-  },
   {
     title: 'Amsler Grid Test',
     description: 'Monitor your vision for signs of retinal diseases.',
@@ -49,7 +42,7 @@ export default function DashboardPage() {
         <h1 className="text-3xl font-bold tracking-tight">Welcome to Visionary</h1>
         <p className="text-muted-foreground">Your personal guide to eye health and care.</p>
       </div>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-1">
         {features.map((feature) => (
           <Card key={feature.title} className="flex flex-col justify-between transition-all hover:shadow-md">
             <CardHeader>
